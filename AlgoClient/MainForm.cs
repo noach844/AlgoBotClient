@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AlgoClient
@@ -23,7 +17,7 @@ namespace AlgoClient
         public MainForm()
         {
             InitializeComponent();
-            random = new Random();            
+            random = new Random();
             this.Text = string.Empty;
             this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
@@ -62,7 +56,7 @@ namespace AlgoClient
                     TitlePanel.BackColor = color;
                     LogoPanel.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
                     ThemeColor.PrimaryColor = color;
-                    ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);                    
+                    ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);
                 }
             }
         }
@@ -82,9 +76,10 @@ namespace AlgoClient
 
         private void OpenChildForm(Form childForm, object btnSender)
         {
+            childForm.Load += ThemeColor.LoadTheme;
+            ActivateButton(btnSender);
             if (activeForm != null)
                 activeForm.Close();
-            ActivateButton(btnSender);
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -93,18 +88,17 @@ namespace AlgoClient
             this.WorkspacePanel.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            TitlePanel.Text = childForm.Text;
-
+            TitleLabel.Text = childForm.Text;
         }
 
         private void AddBotButton_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new Forms.AddBotForm(), sender);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new Form(), sender);
         }
 
         private void TitlePanel_MouseDown(object sender, MouseEventArgs e)

@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AlgoClient
 {
@@ -64,5 +62,20 @@ namespace AlgoClient
             return Color.FromArgb(color.A, (byte)red, (byte)green, (byte)blue);
         }
 
+        public static void LoadTheme(object sender, EventArgs e)
+        {
+            Form form = (Form)sender;
+            form.BackColor = Color.FromArgb(75, 75, 100);
+            foreach (Control btns in form.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+        }
     }
 }
