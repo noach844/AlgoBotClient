@@ -53,6 +53,12 @@
     <Compile Include="Forms\AddBotForm.Designer.cs">
       <DependentUpon>AddBotForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BotForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BotForm.Designer.cs">
+      <DependentUpon>BotForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,9 @@
     <Compile Include="ThemeColor.cs" />
     <EmbeddedResource Include="Forms\AddBotForm.resx">
       <DependentUpon>AddBotForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BotForm.resx">
+      <DependentUpon>BotForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -102,6 +111,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\minmize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bot.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

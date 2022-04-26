@@ -6,9 +6,11 @@ namespace AlgoClient.Forms
 {
     public partial class AddBotForm : Form
     {
-        public AddBotForm()
+        event EventHandler botCreated;
+        public AddBotForm(EventHandler botCreated)
         {
             InitializeComponent();
+            this.botCreated = botCreated;
         }
 
         private void AddBotForm_Load(object sender, EventArgs e)
@@ -40,6 +42,7 @@ namespace AlgoClient.Forms
             if (isValid)
             {
                 bot.CreateConfigFile();
+                botCreated.Invoke(sender, new EventArgs());
             }
         }
     }

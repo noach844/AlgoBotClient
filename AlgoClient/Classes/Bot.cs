@@ -2,7 +2,7 @@
 
 namespace AlgoClient.Classes
 {
-    class Bot
+    public class Bot
     {
         public Dictionary<string, string> BotAttributes { get; private set; }
         public Bot()
@@ -21,7 +21,10 @@ namespace AlgoClient.Classes
 
         public void AddAttribute(string key, string value)
         {
-            BotAttributes.Add(key, value);
+            if (!BotAttributes.ContainsKey(key))
+            {
+                BotAttributes.Add(key, value); 
+            }
         }
 
         public void CreateConfigFile()
@@ -37,6 +40,20 @@ namespace AlgoClient.Classes
             }
 
             streamWriter.Close();
+        }
+
+        public static Bot LoadBotFromFile(string filePath)
+        {
+            Bot bot = new Bot();
+            string[] lines = System.IO.File.ReadAllLines(filePath);
+
+            foreach(string line in lines)
+            {
+                string[] keyValue = line.Split('=');
+                bot.AddAttribute(key: keyValue[0], value: keyValue[1]);
+            }
+
+            return bot;
         }
     }
 }
