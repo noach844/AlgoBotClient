@@ -206,7 +206,7 @@
             this.WorkspacePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.WorkspacePanel.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.WorkspacePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(100)))));
             this.WorkspacePanel.Location = new System.Drawing.Point(220, 80);
             this.WorkspacePanel.Name = "WorkspacePanel";
             this.WorkspacePanel.Size = new System.Drawing.Size(764, 477);

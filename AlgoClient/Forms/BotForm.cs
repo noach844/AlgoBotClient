@@ -71,8 +71,8 @@ namespace AlgoClient.Forms
 
             }
             if (isValid)
-            {
-                bot.CreateConfigFile();                
+            {                
+                bot.CreateConfigFile(out string tmp);                
             }
         }
     }

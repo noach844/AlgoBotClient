@@ -148,6 +148,7 @@ namespace AlgoClient
 
         private void LoadBots()
         {
+            System.IO.Directory.CreateDirectory("Bots");
             string[] files = System.IO.Directory.GetFiles("Bots");
             BotsListPanel.RightToLeft = RightToLeft.Yes;
             BotsListPanel.Controls.Clear();

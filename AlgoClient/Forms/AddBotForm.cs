@@ -37,11 +37,16 @@ namespace AlgoClient.Forms
                         break;
                     }
                 }
-            
+
+                if (control.GetType() == typeof(DateTimePicker))
+                {                                     
+                        DateTimePicker timePicker = (DateTimePicker)control;
+                        bot.AddTimingAttribute(timePicker.Tag.ToString(), timePicker.Value.ToString());                 
+                }
             }
             if (isValid)
             {
-                bot.CreateConfigFile();
+                bot.Deploy();
                 botCreated.Invoke(sender, new EventArgs());
             }
         }
