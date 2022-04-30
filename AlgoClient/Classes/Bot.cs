@@ -25,13 +25,17 @@ namespace AlgoClient.Classes
             {
                 BotAttributes.Add(key, value); 
             }
-        }
+            else
+            {
+                BotAttributes[key] = value;
+            }
+        }       
 
         public void CreateConfigFile()
         {
             System.IO.Directory.CreateDirectory("Bots");
             string fileName = $"{BotAttributes["NAME"]}.txt";
-            System.IO.StreamWriter streamWriter = new System.IO.StreamWriter($"Bots\\{fileName}", append:true);
+            System.IO.StreamWriter streamWriter = new System.IO.StreamWriter($"Bots\\{fileName}", append:false);
 
             foreach(KeyValuePair<string, string> attribute in BotAttributes)
             {
