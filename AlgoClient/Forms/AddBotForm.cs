@@ -15,7 +15,10 @@ namespace AlgoClient.Forms
 
         private void AddBotForm_Load(object sender, EventArgs e)
         {
-
+            comboBox1.SelectedIndex = 0;
+            label9.Visible = false;
+            comboBox2.Visible = false;
+            comboBox2.SelectedIndex = 0;            
         }
 
         private void AddBotButton_Click(object sender, EventArgs e)
@@ -43,11 +46,34 @@ namespace AlgoClient.Forms
                         DateTimePicker timePicker = (DateTimePicker)control;
                         bot.AddTimingAttribute(timePicker.Tag.ToString(), timePicker.Value.ToString());                 
                 }
+
+                if(control.GetType() == typeof(ComboBox))
+                {
+                    ComboBox comboBox = (ComboBox)control;
+                    if(comboBox.Visible)
+                    {
+                        bot.AddTimingAttribute(comboBox.Tag.ToString(), comboBox.SelectedIndex.ToString());
+                    }
+                }
             }
             if (isValid)
             {
                 bot.Deploy();
                 botCreated.Invoke(sender, new EventArgs());
+            }
+        }      
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBox1.SelectedItem?.ToString() == "weekly")
+            {
+                comboBox2.Visible = true;
+                label9.Visible = true;
+            }
+            else
+            {
+                comboBox2.Visible = false;
+                label9.Visible = false;
             }
         }
     }

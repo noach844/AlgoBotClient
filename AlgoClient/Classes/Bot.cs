@@ -80,7 +80,17 @@ namespace AlgoClient.Classes
 
                 // Create a trigger that will fire the task at this time every other day
                 DateTime startTime = DateTime.Parse(BotTiming["TIMING_RUN_TIME"]);
-                td.Triggers.Add(new DailyTrigger { DaysInterval = 2, StartBoundary= startTime});
+                int timingType = Int32.Parse(BotTiming["TIMING_TIMING_TYPE"]);                // 0 - daily, 1 - weekly
+                
+                if(timingType == 0)
+                {
+                    td.Triggers.Add(new DailyTrigger { DaysInterval = 1, StartBoundary= startTime});
+                }
+                else
+                {
+                    double day = Math.Pow(2,Int32.Parse(BotTiming["TIMING_DAY"]));                                        
+                    td.Triggers.Add(new WeeklyTrigger { DaysOfWeek = (DaysOfTheWeek)day, StartBoundary = startTime });
+                }
 
                 td.Principal.RunLevel = TaskRunLevel.Highest;
                 td.Settings.Hidden = true;
