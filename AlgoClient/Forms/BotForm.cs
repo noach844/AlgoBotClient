@@ -14,9 +14,11 @@ namespace AlgoClient.Forms
     public partial class BotForm : Form
     {
         private Bot _bot;
-        public BotForm(Bot bot)
+        event EventHandler botDeleted;
+        public BotForm(Bot bot, EventHandler botDeleted)
         {
             _bot = bot;
+            this.botDeleted = botDeleted;
             InitializeComponent();            
         }
 
@@ -52,6 +54,7 @@ namespace AlgoClient.Forms
         private void UpdateButton_Click(object sender, EventArgs e)
         {
             Bot bot = new Bot();
+            bot.AddAttribute("NAME", Text);
             bool isValid = true;
 
             foreach (Control control in BoxesPanel.Controls)
@@ -74,6 +77,24 @@ namespace AlgoClient.Forms
             {                
                 bot.CreateConfigFile(out string tmp);                
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Are you sure to delete this Bot ?",
+                                     "Confirm Delete!!",
+                                     MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                if(!Bot.DeleteBot(Text))
+                {
+                    MessageBox.Show($"Error while deleting {Text} bot!!!");
+                }
+                else
+                {
+                    botDeleted.Invoke(sender, new EventArgs());
+                }
+            }                 
         }
     }
     

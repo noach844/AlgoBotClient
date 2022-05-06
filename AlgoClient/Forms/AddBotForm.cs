@@ -58,8 +58,14 @@ namespace AlgoClient.Forms
             }
             if (isValid)
             {
-                bot.Deploy();
-                botCreated.Invoke(sender, new EventArgs());
+                if(bot.Deploy())
+                {
+                    botCreated.Invoke(sender, new EventArgs());
+                }
+                else
+                {
+                    MessageBox.Show($"Error creating {bot.BotAttributes["NAME"]} bot!");
+                }
             }
         }      
 

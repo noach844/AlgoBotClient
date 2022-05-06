@@ -8,7 +8,7 @@ namespace AlgoClient.Classes
     {
         public Dictionary<string, string> BotAttributes { get; private set; }
         public Dictionary<string, string> BotTiming { get; private set; }
-        
+
         public Bot()
         {
             BotAttributes = new Dictionary<string, string>();
@@ -28,46 +28,58 @@ namespace AlgoClient.Classes
         {
             if (!BotAttributes.ContainsKey(key))
             {
-                BotAttributes.Add(key, value); 
+                BotAttributes.Add(key, value);
             }
             else
             {
                 BotAttributes[key] = value;
             }
-        }    
-        
+        }
+
         public void AddTimingAttribute(string key, string value)
         {
             if (!BotTiming.ContainsKey(key))
             {
-                BotTiming.Add(key, value); 
+                BotTiming.Add(key, value);
             }
             else
             {
                 BotTiming[key] = value;
             }
-        }       
+        }
 
-        public void Deploy()
+        public bool Deploy()
         {
-            string resFile;
-            CreateConfigFile(out resFile);
-            CreateScheduledTask(resFile);
+            string resFile = String.Empty;
+            try
+            {
+                CreateConfigFile(out resFile);
+                CreateScheduledTask(resFile);
+                return true;
+            }
+            catch (Exception)
+            {
+                if(System.IO.File.Exists(resFile))
+                {
+                    System.IO.File.Delete(resFile);
+                }
+                return false;
+            }
         }
 
         public void CreateConfigFile(out string path)
-        {           
-            System.IO.Directory.CreateDirectory("Bots");
+        {
+            System.IO.Directory.CreateDirectory($@"C:\IBBot\Bin\Bots");
             string fileName = $"{BotAttributes["NAME"]}.txt";
-            System.IO.StreamWriter streamWriter = new System.IO.StreamWriter($"Bots\\{fileName}", append:false);           
-            foreach(KeyValuePair<string, string> attribute in BotAttributes)
+            System.IO.StreamWriter streamWriter = new System.IO.StreamWriter($@"C:\IBBot\Bin\Bots\{fileName}", append: false);
+            foreach (KeyValuePair<string, string> attribute in BotAttributes)
             {
                 string line = $"{attribute.Key}={attribute.Value}";
                 streamWriter.WriteLine(line);
             }
             streamWriter.Close();
 
-            path = System.IO.Path.GetFullPath($"Bots\\{fileName}");
+            path = System.IO.Path.GetFullPath($@"C:\IBBot\Bin\Bots\{fileName}");
         }
 
         private void CreateScheduledTask(string configPath)
@@ -81,14 +93,14 @@ namespace AlgoClient.Classes
                 // Create a trigger that will fire the task at this time every other day
                 DateTime startTime = DateTime.Parse(BotTiming["TIMING_RUN_TIME"]);
                 int timingType = Int32.Parse(BotTiming["TIMING_TIMING_TYPE"]);                // 0 - daily, 1 - weekly
-                
-                if(timingType == 0)
+
+                if (timingType == 0)
                 {
-                    td.Triggers.Add(new DailyTrigger { DaysInterval = 1, StartBoundary= startTime});
+                    td.Triggers.Add(new DailyTrigger { DaysInterval = 1, StartBoundary = startTime });
                 }
                 else
                 {
-                    double day = Math.Pow(2,Int32.Parse(BotTiming["TIMING_DAY"]));                                        
+                    double day = Math.Pow(2, Int32.Parse(BotTiming["TIMING_DAY"]));
                     td.Triggers.Add(new WeeklyTrigger { DaysOfWeek = (DaysOfTheWeek)day, StartBoundary = startTime });
                 }
 
@@ -97,10 +109,10 @@ namespace AlgoClient.Classes
                 td.Principal.LogonType = TaskLogonType.S4U;
 
                 // Create an action that will launch Notepad whenever the trigger fires
-                td.Actions.Add(new ExecAction("IBBot.exe", $"--CONFIG={configPath}", null));
+                td.Actions.Add(new ExecAction(@"C:\IBBot\IBBot.exe", $"--CONFIG={configPath}", null));
 
                 // Register the task in the root folder
-                ts.RootFolder.RegisterTaskDefinition($@"Bots\{BotAttributes["NAME"]}", td);                
+                ts.RootFolder.RegisterTaskDefinition($@"Bots\{BotAttributes["NAME"]}", td);
             }
         }
 
@@ -109,7 +121,7 @@ namespace AlgoClient.Classes
             Bot bot = new Bot();
             string[] lines = System.IO.File.ReadAllLines(filePath);
 
-            foreach(string line in lines)
+            foreach (string line in lines)
             {
                 string[] keyValue = line.Split('=');
                 bot.AddAttribute(key: keyValue[0], value: keyValue[1]);
@@ -117,5 +129,28 @@ namespace AlgoClient.Classes
 
             return bot;
         }
+
+        public static bool DeleteBot(string name)
+        {
+            string filePath = $@"C:\IBBot\Bin\Bots\{name}.txt";
+            string content = System.IO.File.ReadAllText($@"C:\IBBot\Bin\Bots\{name}.txt");
+            try
+            {
+                System.IO.File.Delete(filePath);            
+                using (TaskService ts = new TaskService())
+                {                
+                    ts.GetFolder("Bots").DeleteTask(name);
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                if (!System.IO.File.Exists(filePath))
+                {
+                    System.IO.File.WriteAllText(filePath, content);
+                }
+                return false;
+            }
+        } 
     }
 }

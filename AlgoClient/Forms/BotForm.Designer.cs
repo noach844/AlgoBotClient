@@ -30,8 +30,9 @@
         {
             this.AttributesPanel = new System.Windows.Forms.Panel();
             this.BoxesPanel = new System.Windows.Forms.Panel();
-            this.UpdateButton = new System.Windows.Forms.Button();
             this.LabelsPanel = new System.Windows.Forms.Panel();
+            this.UpdateButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.AttributesPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +55,14 @@
             this.BoxesPanel.Size = new System.Drawing.Size(170, 274);
             this.BoxesPanel.TabIndex = 2;
             // 
+            // LabelsPanel
+            // 
+            this.LabelsPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LabelsPanel.Location = new System.Drawing.Point(0, 0);
+            this.LabelsPanel.Name = "LabelsPanel";
+            this.LabelsPanel.Size = new System.Drawing.Size(170, 274);
+            this.LabelsPanel.TabIndex = 1;
+            // 
             // UpdateButton
             // 
             this.UpdateButton.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -69,19 +78,28 @@
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
-            // LabelsPanel
+            // button1
             // 
-            this.LabelsPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LabelsPanel.Location = new System.Drawing.Point(0, 0);
-            this.LabelsPanel.Name = "LabelsPanel";
-            this.LabelsPanel.Size = new System.Drawing.Size(170, 274);
-            this.LabelsPanel.TabIndex = 1;
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(238, 383);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 35);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Delete";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // BotForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.AttributesPanel);
             this.Name = "BotForm";
@@ -98,5 +116,6 @@
         private System.Windows.Forms.Panel BoxesPanel;
         private System.Windows.Forms.Panel LabelsPanel;
         private System.Windows.Forms.Button UpdateButton;
+        private System.Windows.Forms.Button button1;
     }
 }

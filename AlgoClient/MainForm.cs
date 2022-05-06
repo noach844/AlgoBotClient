@@ -29,6 +29,7 @@ namespace AlgoClient
         private void MainForm_BotCreated(object sender, EventArgs e)
         {
             LoadBots();
+            OpenChildForm(new Forms.AddBotForm(BotCreated), sender);
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -148,8 +149,8 @@ namespace AlgoClient
 
         private void LoadBots()
         {
-            System.IO.Directory.CreateDirectory("Bots");
-            string[] files = System.IO.Directory.GetFiles("Bots");
+            System.IO.Directory.CreateDirectory(@"C:\IBBot\Bin\Bots");
+            string[] files = System.IO.Directory.GetFiles(@"C:\IBBot\Bin\Bots");
             BotsListPanel.RightToLeft = RightToLeft.Yes;
             BotsListPanel.Controls.Clear();
             foreach (string fileName in files)
@@ -160,8 +161,7 @@ namespace AlgoClient
                 btn.Dock = DockStyle.Top;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 0;
-                btn.Text = fileName.Split('\\')[1]
-                                   .Split('.')[0];
+                btn.Text = System.IO.Path.GetFileNameWithoutExtension(fileName);
                 btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
                 btn.Dock = System.Windows.Forms.DockStyle.Top;
                 btn.FlatAppearance.BorderSize = 0;
@@ -177,7 +177,7 @@ namespace AlgoClient
         private void Btn_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            OpenChildForm(new Forms.BotForm(Bot.LoadBotFromFile($@"Bots\{btn.Text}.txt")), sender);
+            OpenChildForm(new Forms.BotForm(Bot.LoadBotFromFile($@"C:\IBBot\Bin\Bots\{btn.Text}.txt"), BotCreated), sender);
         }
 
         protected virtual void OnBotCreated(EventArgs e)
