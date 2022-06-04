@@ -23,8 +23,9 @@ namespace AlgoClient.Forms
         }
 
         private void BotForm_Load(object sender, EventArgs e)
-        {
+        {            
             Text = _bot.BotAttributes["NAME"];
+            EnableButton();
             foreach (KeyValuePair<string, string> keyValue in _bot.BotAttributes)
             {
                 if(keyValue.Key != "NAME")
@@ -95,6 +96,26 @@ namespace AlgoClient.Forms
                     botDeleted.Invoke(sender, new EventArgs());
                 }
             }                 
+        }
+
+        private void EnableButton()
+        {
+            if(Bot.isEnabled(Text))
+            {
+                button2.Text = "Disable";
+                button2.BackColor = Color.FromArgb(192, 0, 0);
+            }
+            else
+            {
+                button2.Text = "Enable";
+                button2.BackColor = Color.FromArgb(80, 200, 120);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Bot.ToggleEnable(Text);
+            botDeleted.Invoke(sender, new EventArgs());
         }
     }
     

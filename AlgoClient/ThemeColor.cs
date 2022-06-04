@@ -60,8 +60,7 @@ namespace AlgoClient
             }
 
             return Color.FromArgb(color.A, (byte)red, (byte)green, (byte)blue);
-        }
-
+        }        
         public static void LoadTheme(object sender, EventArgs e)
         {
             Form form = (Form)sender;
@@ -70,7 +69,7 @@ namespace AlgoClient
             {
                 if (btns.GetType() == typeof(Button))
                 {
-                    if (btns.Text != "Delete")
+                    if (btns.Tag?.ToString() != "Unique")
                     {
                         Button btn = (Button)btns;
                         btn.BackColor = ThemeColor.PrimaryColor;

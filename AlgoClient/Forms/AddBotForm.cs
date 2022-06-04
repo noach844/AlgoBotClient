@@ -18,7 +18,9 @@ namespace AlgoClient.Forms
             comboBox1.SelectedIndex = 0;
             label9.Visible = false;
             comboBox2.Visible = false;
-            comboBox2.SelectedIndex = 0;            
+            comboBox2.SelectedIndex = 0;
+            comboBox3.SelectedIndex = 0;
+            comboBox4.SelectedIndex = 0;
         }
 
         private void AddBotButton_Click(object sender, EventArgs e)
@@ -50,9 +52,14 @@ namespace AlgoClient.Forms
                 if(control.GetType() == typeof(ComboBox))
                 {
                     ComboBox comboBox = (ComboBox)control;
-                    if(comboBox.Visible)
+                    if(comboBox.Visible && comboBox.Tag.ToString().StartsWith("TIMING"))
                     {
                         bot.AddTimingAttribute(comboBox.Tag.ToString(), comboBox.SelectedIndex.ToString());
+                    }
+                    else
+                    {
+                        string value = comboBox.SelectedItem.Equals(">") ? "True" : "False";
+                        bot.AddAttribute(comboBox.Tag.ToString(), value);
                     }
                 }
             }

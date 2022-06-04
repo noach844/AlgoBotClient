@@ -8,7 +8,7 @@ namespace AlgoClient.Classes
     {
         public Dictionary<string, string> BotAttributes { get; private set; }
         public Dictionary<string, string> BotTiming { get; private set; }
-
+        
         public Bot()
         {
             BotAttributes = new Dictionary<string, string>();
@@ -128,6 +128,35 @@ namespace AlgoClient.Classes
             }
 
             return bot;
+        }
+
+        public static bool ToggleEnable(string name)
+        {
+            try
+            {
+                using (TaskService ts = new TaskService())
+                {
+                    Task task = ts.GetTask($@"Bots\{name}");
+                    task.Enabled = !task.Enabled;
+                    task.Definition.Settings.Enabled = !task.Enabled;
+                    task.RegisterChanges();                    
+                    return true;
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+
+        public static bool isEnabled(string name)
+        {
+            using (TaskService ts = new TaskService())
+            {
+                Task task = ts.GetTask($@"Bots\{name}");                
+                return task.Enabled;
+            }
         }
 
         public static bool DeleteBot(string name)

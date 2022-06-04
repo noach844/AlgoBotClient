@@ -58,7 +58,7 @@
             this.MenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuPanel.Location = new System.Drawing.Point(0, 0);
             this.MenuPanel.Name = "MenuPanel";
-            this.MenuPanel.Size = new System.Drawing.Size(220, 557);
+            this.MenuPanel.Size = new System.Drawing.Size(220, 688);
             this.MenuPanel.TabIndex = 0;
             // 
             // BotsListPanel
@@ -67,7 +67,7 @@
             this.BotsListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BotsListPanel.Location = new System.Drawing.Point(0, 220);
             this.BotsListPanel.Name = "BotsListPanel";
-            this.BotsListPanel.Size = new System.Drawing.Size(220, 337);
+            this.BotsListPanel.Size = new System.Drawing.Size(220, 468);
             this.BotsListPanel.TabIndex = 0;
             // 
             // panel1
@@ -142,7 +142,7 @@
             this.TitlePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TitlePanel.Location = new System.Drawing.Point(220, 0);
             this.TitlePanel.Name = "TitlePanel";
-            this.TitlePanel.Size = new System.Drawing.Size(764, 80);
+            this.TitlePanel.Size = new System.Drawing.Size(920, 80);
             this.TitlePanel.TabIndex = 1;
             this.TitlePanel.DoubleClick += new System.EventHandler(this.MaxButton_Click);
             this.TitlePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitlePanel_MouseDown);
@@ -154,7 +154,7 @@
             this.MaxButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MaxButton.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.MaxButton.Image = ((System.Drawing.Image)(resources.GetObject("MaxButton.Image")));
-            this.MaxButton.Location = new System.Drawing.Point(695, 3);
+            this.MaxButton.Location = new System.Drawing.Point(851, 3);
             this.MaxButton.Name = "MaxButton";
             this.MaxButton.Size = new System.Drawing.Size(30, 30);
             this.MaxButton.TabIndex = 3;
@@ -168,7 +168,7 @@
             this.MinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MinButton.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.MinButton.Image = global::AlgoClient.Properties.Resources.minmize;
-            this.MinButton.Location = new System.Drawing.Point(659, 3);
+            this.MinButton.Location = new System.Drawing.Point(815, 3);
             this.MinButton.Name = "MinButton";
             this.MinButton.Size = new System.Drawing.Size(30, 30);
             this.MinButton.TabIndex = 2;
@@ -182,7 +182,7 @@
             this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CloseButton.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.CloseButton.Image = global::AlgoClient.Properties.Resources.close;
-            this.CloseButton.Location = new System.Drawing.Point(731, 3);
+            this.CloseButton.Location = new System.Drawing.Point(887, 3);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(30, 30);
             this.CloseButton.TabIndex = 1;
@@ -195,7 +195,7 @@
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TitleLabel.ForeColor = System.Drawing.Color.White;
-            this.TitleLabel.Location = new System.Drawing.Point(356, 21);
+            this.TitleLabel.Location = new System.Drawing.Point(434, 21);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(83, 32);
             this.TitleLabel.TabIndex = 0;
@@ -209,14 +209,14 @@
             this.WorkspacePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(100)))));
             this.WorkspacePanel.Location = new System.Drawing.Point(220, 80);
             this.WorkspacePanel.Name = "WorkspacePanel";
-            this.WorkspacePanel.Size = new System.Drawing.Size(764, 477);
+            this.WorkspacePanel.Size = new System.Drawing.Size(920, 608);
             this.WorkspacePanel.TabIndex = 2;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 557);
+            this.ClientSize = new System.Drawing.Size(1140, 688);
             this.Controls.Add(this.WorkspacePanel);
             this.Controls.Add(this.TitlePanel);
             this.Controls.Add(this.MenuPanel);
