@@ -58,7 +58,7 @@
             this.MenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuPanel.Location = new System.Drawing.Point(0, 0);
             this.MenuPanel.Name = "MenuPanel";
-            this.MenuPanel.Size = new System.Drawing.Size(220, 688);
+            this.MenuPanel.Size = new System.Drawing.Size(220, 797);
             this.MenuPanel.TabIndex = 0;
             // 
             // BotsListPanel
@@ -67,7 +67,7 @@
             this.BotsListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BotsListPanel.Location = new System.Drawing.Point(0, 220);
             this.BotsListPanel.Name = "BotsListPanel";
-            this.BotsListPanel.Size = new System.Drawing.Size(220, 468);
+            this.BotsListPanel.Size = new System.Drawing.Size(220, 577);
             this.BotsListPanel.TabIndex = 0;
             // 
             // panel1
@@ -209,14 +209,14 @@
             this.WorkspacePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(100)))));
             this.WorkspacePanel.Location = new System.Drawing.Point(220, 80);
             this.WorkspacePanel.Name = "WorkspacePanel";
-            this.WorkspacePanel.Size = new System.Drawing.Size(920, 608);
+            this.WorkspacePanel.Size = new System.Drawing.Size(920, 717);
             this.WorkspacePanel.TabIndex = 2;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1140, 688);
+            this.ClientSize = new System.Drawing.Size(1140, 797);
             this.Controls.Add(this.WorkspacePanel);
             this.Controls.Add(this.TitlePanel);
             this.Controls.Add(this.MenuPanel);

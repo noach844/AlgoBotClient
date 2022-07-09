@@ -21,6 +21,7 @@ namespace AlgoClient.Forms
             comboBox2.SelectedIndex = 0;
             comboBox3.SelectedIndex = 0;
             comboBox4.SelectedIndex = 0;
+            comboBox5.SelectedIndex = 0;
         }
 
         private void AddBotButton_Click(object sender, EventArgs e)

@@ -117,6 +117,16 @@ namespace AlgoClient.Forms
             Bot.ToggleEnable(Text);
             botDeleted.Invoke(sender, new EventArgs());
         }
+
+        private void BoxesPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void LabelsPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
     
 }

@@ -40,11 +40,12 @@
             // AttributesPanel
             // 
             this.AttributesPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AttributesPanel.AutoScroll = true;
             this.AttributesPanel.Controls.Add(this.BoxesPanel);
             this.AttributesPanel.Controls.Add(this.LabelsPanel);
-            this.AttributesPanel.Location = new System.Drawing.Point(269, 52);
+            this.AttributesPanel.Location = new System.Drawing.Point(269, 36);
             this.AttributesPanel.Name = "AttributesPanel";
-            this.AttributesPanel.Size = new System.Drawing.Size(340, 400);
+            this.AttributesPanel.Size = new System.Drawing.Size(340, 584);
             this.AttributesPanel.TabIndex = 0;
             this.AttributesPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AttributesPanel_Paint);
             // 
@@ -53,16 +54,18 @@
             this.BoxesPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.BoxesPanel.Location = new System.Drawing.Point(170, 0);
             this.BoxesPanel.Name = "BoxesPanel";
-            this.BoxesPanel.Size = new System.Drawing.Size(170, 400);
+            this.BoxesPanel.Size = new System.Drawing.Size(170, 584);
             this.BoxesPanel.TabIndex = 2;
+            this.BoxesPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.BoxesPanel_Paint);
             // 
             // LabelsPanel
             // 
             this.LabelsPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LabelsPanel.Location = new System.Drawing.Point(0, 0);
             this.LabelsPanel.Name = "LabelsPanel";
-            this.LabelsPanel.Size = new System.Drawing.Size(170, 400);
+            this.LabelsPanel.Size = new System.Drawing.Size(170, 584);
             this.LabelsPanel.TabIndex = 1;
+            this.LabelsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.LabelsPanel_Paint);
             // 
             // UpdateButton
             // 
@@ -71,7 +74,7 @@
             this.UpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UpdateButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateButton.ForeColor = System.Drawing.Color.White;
-            this.UpdateButton.Location = new System.Drawing.Point(512, 474);
+            this.UpdateButton.Location = new System.Drawing.Point(512, 626);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(97, 35);
             this.UpdateButton.TabIndex = 1;
@@ -87,7 +90,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(269, 474);
+            this.button1.Location = new System.Drawing.Point(269, 626);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 35);
             this.button1.TabIndex = 2;
@@ -104,7 +107,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(708, 52);
+            this.button2.Location = new System.Drawing.Point(705, 36);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 35);
             this.button2.TabIndex = 3;
@@ -117,7 +120,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 600);
+            this.ClientSize = new System.Drawing.Size(863, 747);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.UpdateButton);
