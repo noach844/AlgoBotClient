@@ -45,6 +45,8 @@ namespace AlgoClient.Forms
                     BoxesPanel.Controls.Add(box);
                 }                
             }
+
+            this.Height *= 2;
         }
 
         private void AttributesPanel_Paint(object sender, PaintEventArgs e)

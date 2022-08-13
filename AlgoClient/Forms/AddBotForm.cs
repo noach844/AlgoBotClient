@@ -90,5 +90,15 @@ namespace AlgoClient.Forms
                 label9.Visible = false;
             }
         }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox16_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
