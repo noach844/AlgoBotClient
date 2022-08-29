@@ -105,8 +105,8 @@ namespace AlgoClient.Classes
                 }
 
                 td.Principal.RunLevel = TaskRunLevel.Highest;
-                td.Settings.Hidden = true;
-                td.Principal.LogonType = TaskLogonType.S4U;
+                td.Settings.Hidden = false;
+                td.Principal.LogonType = TaskLogonType.InteractiveToken;
 
                 // Create an action that will launch Notepad whenever the trigger fires
                 td.Actions.Add(new ExecAction(@"C:\IBBot\IBBot.exe", $"--CONFIG={configPath}", null));

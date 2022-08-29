@@ -34,11 +34,8 @@
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
@@ -82,11 +79,8 @@
             this.panel1.Controls.Add(this.textBox15);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.textBox14);
-            this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.textBox13);
-            this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.textBox12);
-            this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.textBox11);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.comboBox5);
@@ -125,9 +119,9 @@
             // 
             // textBox16
             // 
-            this.textBox16.Location = new System.Drawing.Point(596, 179);
+            this.textBox16.Location = new System.Drawing.Point(590, 80);
             this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(162, 20);
+            this.textBox16.Size = new System.Drawing.Size(167, 20);
             this.textBox16.TabIndex = 23;
             this.textBox16.Tag = "TAKE_PROFIT";
             this.textBox16.Text = "50";
@@ -138,7 +132,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(414, 173);
+            this.label19.Location = new System.Drawing.Point(408, 74);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(113, 25);
             this.label19.TabIndex = 38;
@@ -147,9 +141,9 @@
             // 
             // textBox15
             // 
-            this.textBox15.Location = new System.Drawing.Point(596, 139);
+            this.textBox15.Location = new System.Drawing.Point(590, 40);
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(162, 20);
+            this.textBox15.Size = new System.Drawing.Size(167, 20);
             this.textBox15.TabIndex = 21;
             this.textBox15.Tag = "QUANTITY";
             this.textBox15.Text = "1";
@@ -159,7 +153,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(414, 133);
+            this.label18.Location = new System.Drawing.Point(408, 34);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(176, 25);
             this.label18.TabIndex = 36;
@@ -167,79 +161,46 @@
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(595, 103);
+            this.textBox14.Location = new System.Drawing.Point(725, 3);
             this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(162, 20);
+            this.textBox14.Size = new System.Drawing.Size(32, 20);
             this.textBox14.TabIndex = 20;
-            this.textBox14.Tag = "EMA_DAYS";
-            this.textBox14.Text = "20";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(417, 103);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(105, 25);
-            this.label17.TabIndex = 34;
-            this.label17.Text = "EMA Days:";
+            this.textBox14.Tag = "EMA2";
+            this.textBox14.Text = "8";
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(595, 68);
+            this.textBox13.Location = new System.Drawing.Point(311, 279);
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(162, 20);
+            this.textBox13.Size = new System.Drawing.Size(29, 20);
             this.textBox13.TabIndex = 19;
-            this.textBox13.Tag = "SMA_DAYS";
-            this.textBox13.Text = "50";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(417, 68);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(106, 25);
-            this.label16.TabIndex = 32;
-            this.label16.Text = "SMA Days:";
+            this.textBox13.Tag = "SMA2";
+            this.textBox13.Text = "0";
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(595, 34);
+            this.textBox12.Location = new System.Drawing.Point(311, 246);
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(162, 20);
+            this.textBox12.Size = new System.Drawing.Size(29, 20);
             this.textBox12.TabIndex = 18;
-            this.textBox12.Tag = "RSI_DAYS";
-            this.textBox12.Text = "14";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(417, 34);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(93, 25);
-            this.label15.TabIndex = 30;
-            this.label15.Text = "RSI Days:";
+            this.textBox12.Tag = "RSI2";
+            this.textBox12.Text = "0";
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(649, 3);
+            this.textBox11.Location = new System.Drawing.Point(587, 3);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(108, 20);
+            this.textBox11.Size = new System.Drawing.Size(32, 20);
             this.textBox11.TabIndex = 17;
-            this.textBox11.Tag = "EMA";
-            this.textBox11.Text = "0";
+            this.textBox11.Tag = "EMA1";
+            this.textBox11.Text = "3";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(417, 1);
+            this.label14.Location = new System.Drawing.Point(408, 1);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 25);
             this.label14.TabIndex = 27;
@@ -250,11 +211,11 @@
             this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Items.AddRange(new object[] {
-            ">",
-            "<"});
-            this.comboBox5.Location = new System.Drawing.Point(595, 3);
+            "ABOVE",
+            "UNDER"});
+            this.comboBox5.Location = new System.Drawing.Point(625, 2);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(48, 21);
+            this.comboBox5.Size = new System.Drawing.Size(94, 21);
             this.comboBox5.TabIndex = 16;
             this.comboBox5.Tag = "EMA_IS_GREATER";
             // 
@@ -298,12 +259,12 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(239, 278);
+            this.textBox8.Location = new System.Drawing.Point(185, 278);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(101, 20);
+            this.textBox8.Size = new System.Drawing.Size(33, 20);
             this.textBox8.TabIndex = 11;
-            this.textBox8.Tag = "SMA";
-            this.textBox8.Text = "0";
+            this.textBox8.Tag = "SMA1";
+            this.textBox8.Text = "3";
             // 
             // label8
             // 
@@ -318,12 +279,12 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(239, 246);
+            this.textBox7.Location = new System.Drawing.Point(185, 245);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(101, 20);
+            this.textBox7.Size = new System.Drawing.Size(33, 20);
             this.textBox7.TabIndex = 9;
-            this.textBox7.Tag = "RSI";
-            this.textBox7.Text = "0";
+            this.textBox7.Tag = "RSI1";
+            this.textBox7.Text = "14";
             // 
             // label9
             // 
@@ -395,13 +356,14 @@
             this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Items.AddRange(new object[] {
-            ">",
-            "<"});
-            this.comboBox4.Location = new System.Drawing.Point(185, 278);
+            "ABOVE",
+            "UNDER"});
+            this.comboBox4.Location = new System.Drawing.Point(224, 278);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(48, 21);
+            this.comboBox4.Size = new System.Drawing.Size(81, 21);
             this.comboBox4.TabIndex = 10;
             this.comboBox4.Tag = "SMA_IS_GREATER";
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // comboBox3
             // 
@@ -409,11 +371,11 @@
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.ItemHeight = 13;
             this.comboBox3.Items.AddRange(new object[] {
-            ">",
-            "<"});
-            this.comboBox3.Location = new System.Drawing.Point(185, 245);
+            "ABOVE",
+            "UNDER"});
+            this.comboBox3.Location = new System.Drawing.Point(224, 244);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(48, 21);
+            this.comboBox3.Size = new System.Drawing.Size(81, 21);
             this.comboBox3.TabIndex = 18;
             this.comboBox3.Tag = "RSI_IS_GREATER";
             // 
@@ -621,11 +583,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBox16;

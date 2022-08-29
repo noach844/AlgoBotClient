@@ -59,7 +59,7 @@ namespace AlgoClient.Forms
                     }
                     else
                     {
-                        string value = comboBox.SelectedItem.Equals(">") ? "True" : "False";
+                        string value = comboBox.SelectedItem.Equals("ABOVE") ? "True" : "False";
                         bot.AddAttribute(comboBox.Tag.ToString(), value);
                     }
                 }
@@ -97,6 +97,11 @@ namespace AlgoClient.Forms
         }
 
         private void textBox16_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
