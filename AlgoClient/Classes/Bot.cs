@@ -137,7 +137,7 @@ namespace AlgoClient.Classes
                 using (TaskService ts = new TaskService())
                 {
                     Task task = ts.GetTask($@"Bots\{name}");
-                    task.Enabled = !task.Enabled;
+                    
                     task.Definition.Settings.Enabled = !task.Enabled;
                     task.RegisterChanges();                    
                     return true;
